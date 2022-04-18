@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <!--  <span>HOME</span> -->
+       <mat-icon [routerLink]="['/']" style="cursor: pointer;">home</mat-icon>
+       <span class="spacer"></span>
+       <a *ngIf="isAdmin()" mat-button [routerLink]="['/new-ware']">Add Ware</a>
+       <a *ngIf="this.userService.getUser()" mat-button [routerLink]="['/list-wares']">Wares</a>
+       <a *ngIf="!this.userService.getUser()" mat-button [routerLink]="['/register']">Register</a>
+       <a *ngIf="!this.userService.getUser()" mat-button [routerLink]="['/login']">Login</a>
+       <mat-icon *ngIf="this.userService.getUser() && !isAdmin()" [routerLink]="['/my-list']" style="cursor: pointer;">shopping_cart</mat-icon>
+       <a *ngIf="this.userService.getUser()" mat-button [routerLink]="['/']" (click)="logout()">Logout</a>
+    </mat-toolbar-row>
+ </mat-toolbar>
+<router-outlet></router-outlet>

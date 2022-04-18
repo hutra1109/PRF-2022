@@ -1,0 +1,29 @@
+
+<div *ngIf="result != ''" fxLayout fxLayoutAlign="center">
+    <mat-card fxLayout fxLayoutAlign="center" class="info" [innerHTML]="result">
+    </mat-card>
+</div>
+<form [formGroup]="userForm" class="form-container" fxLayout fxLayoutAlign="center">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <input formControlName="username" matInput placeholder="Username">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <input formControlName="password" matInput type="password" placeholder="Password">
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button type="submit" mat-raised-button color="primary" (click)="submit()">Submit</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

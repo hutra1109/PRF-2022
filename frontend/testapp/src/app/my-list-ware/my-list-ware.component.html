@@ -1,0 +1,31 @@
+<div *ngFor="let item of wares | keyvalue">
+    <mat-card class="example-card" fxLayout="row">
+        <div>
+            <img src="{{item.key.imgUrl}}" alt="Pizza" class="bgImg">
+        </div>
+        <div>
+            <mat-card-header>
+                <mat-card-title>{{item.key.name}}</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content style="display: flex; margin-left: 1rem;">
+                <p style="width: 10rem; height: 10rem; word-wrap: break-word;">{{item.key.description}}</p>
+            </mat-card-content>
+        </div>
+        <mat-card-content style="display: flex; justify-content: flex-end; flex: auto; align-items:center;">
+            <div>
+                <mat-card-content style="display: flex; justify-content: flex-end; flex: auto; align-items:center;">
+                    <p>{{item.key.diameter}} cm <br> {{item.key.price}} Ft</p>
+                </mat-card-content>
+            </div>
+            <div style="margin-left: 2rem;">
+                darab: {{item.value}}
+            </div>
+            <div style="margin-left: 2rem;">
+                <mat-card-content style="display: flex; justify-content: flex-end; flex: auto; align-items:center;">
+                    <mat-icon (click)="removeFromChart(item.key)" style="cursor: pointer;">remove_shopping_cart</mat-icon>
+                </mat-card-content>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

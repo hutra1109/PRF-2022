@@ -1,0 +1,21 @@
+.info {
+    margin-bottom: 2rem;
+    background-color: #fcf1ef;
+}
+
+.size {
+    font-size: 10em;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.flex.main-component {
+    height: 100vh;
+    align-items: center;
+}
