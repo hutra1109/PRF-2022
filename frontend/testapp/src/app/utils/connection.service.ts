@@ -20,15 +20,15 @@ export class ConnectionService {
   }
 
   loginUser(body: any) {
-    return this.http.post("http://localhost:3000/" + 'login', body, {withCredentials: true});//{withCredentials: true}
+    return this.http.post(environment.hostUrl + 'login', body, {withCredentials: true});//{withCredentials: true}
   }
 
   logoutUser() {
-    return this.http.post("http://localhost:3000/"  + 'logout', {}, {withCredentials: true}); //{withCredentials: true}
+    return this.http.post(environment.hostUrl  + 'logout', {}, {withCredentials: true}); //{withCredentials: true}
   }
 
   getStatus() {
-    return this.http.get("http://localhost:3000/"  + 'status');
+    return this.http.get(environment.hostUrl + 'status');
   }
 
   putWare(body: any, file: File) {
@@ -82,7 +82,7 @@ export class ConnectionService {
   }
 
   removeWare(id:string) {
-    return this.http.delete("http://localhost:3000/" + 'wares/' + id, {});
+    return this.http.delete(environment.hostUrl + 'wares/' + id, {});
   }
 
 }

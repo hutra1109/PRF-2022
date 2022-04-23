@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   hostUrl: 'https://prf-2022-webshop.herokuapp.com/'
 };
 
